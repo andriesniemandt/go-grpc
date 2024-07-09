@@ -6,9 +6,10 @@ import (
 	"log"
 )
 
-func (s *Server) Greeting(ctx context.Context, r *pb.GreetingRequest) (pb.GreetingResponse, error) {
-	log.Printf("Greeting called by server")
-	return pb.GreetingResponse{
+func (s *Server) Greet(ctx context.Context, r *pb.GreetingRequest) (*pb.GreetingResponse, error) {
+	log.Printf("Greeting invoked with %v\n", r)
+
+	return &pb.GreetingResponse{
 		Result: "Hello, " + r.FirstName,
 	}, nil
 }

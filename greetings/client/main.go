@@ -1,6 +1,7 @@
 package main
 
 import (
+	pb "github.com/andriesniemandt/go-grpc/greetings/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
@@ -11,8 +12,10 @@ var addr = "localhost:8080"
 func main() {
 	conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
-		log.Fatal("Failed to connect to server:", err)
+		log.Fatalf("Failed to connect to server: %v\n", err)
 	}
-
 	defer conn.Close()
+
+	c := pb.NewGreetingServiceClient(conn)
+	doGreeting(c)
 }
