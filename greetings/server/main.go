@@ -7,7 +7,7 @@ import (
 	"net"
 )
 
-var addr string = "0.0.0.0:8080"
+var addr = "0.0.0.0:8080"
 
 type Server struct {
 	pb.GreetingServiceServer
@@ -20,7 +20,6 @@ func main() {
 	}
 
 	log.Printf("Listening on %v", srv.Addr())
-	defer srv.Close()
 
 	gs := grpc.NewServer()
 	if err = gs.Serve(srv); err != nil {

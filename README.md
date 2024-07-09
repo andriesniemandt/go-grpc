@@ -21,4 +21,5 @@ make greetings
 
 ```bash
 go build -o bin/greetings/server ./greetings/server
+go build -o bin/greetings/client ./greetings/client
 ```
