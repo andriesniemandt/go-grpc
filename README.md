@@ -18,3 +18,7 @@ protoc --version
 ```bash
 make greetings
 ```
+
+```bash
+go build -o bin/greetings/server ./greetings/server
+```

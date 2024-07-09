@@ -6,4 +6,4 @@ greetings:
  	--go_opt=module=github.com/andriesniemandt/go-grpc \
  	--go-grpc_out=. \
  	--go-grpc_opt=module=github.com/andriesniemandt/go-grpc \
- 	greetings/proto/dummy.proto
+ 	greetings/proto/greetings.proto
